@@ -17,7 +17,7 @@ import org.junit.Test;
 public class ExceptionMessageManagerTest {
 	ExceptionsMessageManager manager; // manager
 	Map<String, String> testMap;
-	String howShouldBe = "";
+	String howItShouldBe = "";
 
 	/**
 	 * Initializes the class map.
@@ -29,7 +29,7 @@ public class ExceptionMessageManagerTest {
 		testMap.put("food", "The food is ending.");
 		testMap.put("fuel", "We are going out of fuel.");
 
-		manager = new ExceptionsMessageManager(testMap, "|");
+		manager = new ExceptionsMessageManager(testMap);
 	}
 
 	/**
@@ -39,8 +39,8 @@ public class ExceptionMessageManagerTest {
 	@Test
 	public void testAddException() {
 		manager.addExceptionMessage("There is no water.");
-		howShouldBe = "There is no water.";
-		assertEquals(manager.getMessage(), howShouldBe);
+		howItShouldBe = "There is no water.";
+		assertEquals(manager.getMessage(), howItShouldBe);
 	}
 
 	/**
@@ -52,8 +52,8 @@ public class ExceptionMessageManagerTest {
 	@Test
 	public void testAddExceptionMessageUsingCode() throws Exception {
 		manager.addExceptionMessageUsingCode("food");
-		howShouldBe += testMap.get("food");
-		assertEquals(howShouldBe, manager.getMessage());
+		howItShouldBe += testMap.get("food");
+		assertEquals(howItShouldBe, manager.getMessage());
 	}
 
 	/**

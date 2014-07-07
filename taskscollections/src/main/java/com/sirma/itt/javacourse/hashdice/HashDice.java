@@ -14,9 +14,9 @@ public class HashDice {
 	private Map<String, ArrayList<Integer>> hashDice = new HashMap<String, ArrayList<Integer>>();
 
 	/**
-	 * The method for inserting in a hash map. Gets a string and an integer.
+	 * This method is for inserting in a hash map. Gets a string and an integer.
 	 * Looks if the string is a key and if it is puts the integer in the end of
-	 * the list. If it not makes the string a new key and inputs the integer in
+	 * the list. The other way round makes the string a new key and inputs the integer in
 	 * the end of new array list.
 	 * 
 	 * @param combination

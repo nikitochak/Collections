@@ -16,7 +16,7 @@ import org.junit.Test;
 public class HashDiceTest {
 	private HashDice hashDice;
 	private String inside = "1,3";
-	private int[] array = new int[2];
+	private int[] keepTheInserted = new int[2];
 
 	/**
 	 * Inserts new data in the table. Saves the same data in another array.
@@ -26,10 +26,10 @@ public class HashDiceTest {
 		hashDice = new HashDice();
 
 		hashDice.insert(inside, 3);
-		array[0] = 3;
+		keepTheInserted[0] = 3;
 		inside = "1,3";
 		hashDice.insert(inside, 5);
-		array[1] = 5;
+		keepTheInserted[1] = 5;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class HashDiceTest {
 
 		for (int i = 0; i < arList.size(); i++) {
 			int num = arList.get(i);
-			assertEquals(num, array[i]);
+			assertEquals(num, keepTheInserted[i]);
 		}
 
 	}

@@ -21,11 +21,11 @@ import java.util.regex.Pattern;
 public class ExceptionsMessageManager {
 	private HashMap<String, String> exceptions = new HashMap<String, String>();
 	private String message = "";
-	private final String SEPARATOR;
-	private static Pattern pattern = Pattern.compile("[A-Za-z]++");
+	private final static String SEPARATOR = "|";
+	private static Pattern pattern = Pattern.compile("[^+" + SEPARATOR + "]+?"
+			+ SEPARATOR);
 
-	public ExceptionsMessageManager(Map<String, String> getMap, String separator) {
-		this.SEPARATOR = separator;
+	public ExceptionsMessageManager(Map<String, String> getMap) {
 		this.exceptions = (HashMap<String, String>) getMap;
 	}
 
